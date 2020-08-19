@@ -10,13 +10,13 @@ class TestFlaskApi(unittest.TestCase):
         self.app.testing = True
 
     def test_get_all(self):
-        response = self.app.get('https://guarded-springs-49761.herokuapp.com/getusers')
+        response = self.app.get('https://warm-retreat-38086.herokuapp.com/getusers')
         data = json.loads(response.get_data())
         self.assertEqual(response.status_code, 200)
 
 
     def test_get_user(self):
-        response = self.app.get('https://guarded-springs-49761.herokuapp.com/searchuser/selva')
+        response = self.app.get('https://warm-retreat-38086.herokuapp.com/searchuser/selva')
         data = json.loads(response.get_data())
         self.assertEqual(response.status_code, 200)
         #self.assertEqual(data['message'][0]['username'], 'selva')
@@ -30,7 +30,7 @@ class TestFlaskApi(unittest.TestCase):
         #self.assertEqual(data['message'][0].department, 'mech')    
 
     def test_item_not_exist(self):
-        response = self.app.get('https://guarded-springs-49761.herokuapp.com/searchuser/saravana')
+        response = self.app.get('https://warm-retreat-38086.herokuapp.com/searchuser/saravana')
         self.assertEqual(response.status_code, 404)
 
 
