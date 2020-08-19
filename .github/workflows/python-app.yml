@@ -40,6 +40,8 @@ jobs:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       if: github.ref == 'refs/heads/master' && job.status == 'success'
-      run: git push https://heroku:9c26d04e-f2da-491d-8c7b-0552e7bcbbd5@git.heroku.com/guarded-springs-49761.git origin/master:master   
+      run: |
+        git push https://heroku:9c26d04e-f2da-491d-8c7b-0552e7bcbbd5@git.heroku.com/guarded-springs-49761.git
+        git push heroku origin/master:master -f   
         
     
