@@ -101,12 +101,3 @@ def student_barchart():
     df=pd.read_json(output)
     df.to_csv('new.csv',index=False)
     return render_template('chart.html',values=student_list)
-
-@app.route('/csv',methods=['GET'])
-def csvfile():
-    url='/home/bahulashree/flasktask/new.csv'
-    with open(url,'r') as f:
-        content=f.read()
-        return content
-
-
