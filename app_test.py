@@ -19,15 +19,11 @@ class TestFlaskApi(unittest.TestCase):
         response = self.app.get('https://warm-retreat-38086.herokuapp.com/searchuser/selva')
         data = json.loads(response.get_data())
         self.assertEqual(response.status_code, 200)
-        #self.assertEqual(data['message'][0]['username'], 'selva')
-        #self.assertEqual(data['message'][0]['department'], 'mech')
 
     def test_get_dept(self):
         response = self.app.get('https://guarded-springs-49761.herokuapp.com/searchdept/mech')
         data = json.loads(response.get_data())
-        self.assertEqual(response.status_code, 200)
-        #self.assertEqual(data['message'][0].username, 'selva')
-        #self.assertEqual(data['message'][0].department, 'mech')    
+        self.assertEqual(response.status_code, 200)   
 
     def test_item_not_exist(self):
         response = self.app.get('https://warm-retreat-38086.herokuapp.com/searchuser/saravana')
